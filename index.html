@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Extraction Tool</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff; /* Blue background color */
+            color: #fff; /* White text color */
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007BFF; /* Slightly darker blue for the header */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 32px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            color: #333; /* Text color for container content */
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #007BFF; /* Dark blue for CTA buttons */
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3; /* Slightly darker blue on hover */
+        }
+
+        .file-upload {
+            border: 2px dashed #ccc;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .file-upload input {
+            display: none;
+        }
+
+        .how-it-works {
+            margin-top: 20px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .how-it-works h2 {
+            font-size: 24px;
+        }
+
+        .how-it-works-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            animation: fadeInUp 2s;
+        }
+
+        .how-it-works-step-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #007BFF;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-right: 20px;
+        }
+
+        .how-it-works-step-description {
+            flex-grow: 1;
+        }
+
+        .how-it-works-step-description h3 {
+            color: #007BFF; /* Highlighted header color */
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Added styles for Python code explanations */
+        .code-explanations {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .code-explanations h2 {
+            font-size: 24px;
+        }
+
+        .code-explanations p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .code-explanations ol {
+            list-style-type: decimal;
+            padding-left: 20px;
+        }
+
+        .code-explanations li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bill Extraction Tool</h1>
+    </header>
+    <div class="container">
+        <p>Save your crucial time and prevent any error from occurring with our free table extraction tool. With this tool, extract tables from images in real-time with 100% accuracy.</p>
+
+        <div class="file-upload">
+            <label for="file-input" class="cta-button">Drop your file here, or browse</label>
+            <input type="file" id="file-input" accept=".jpg, .png, .jpeg" />
+            <p>Supports images only (20MB max)</p>
+        </div>
+
+        <div class="how-it-works">
+            <h2>How it works?</h2>
+            <div class="how-it-works-step">
+                <div class="how-it-works-step-icon">1</div>
+                <div class="how-it-works-step-description">
+                    <h3>Upload your image</h3>
+                    <p>Images are safely uploaded over an encrypted connection. Images stay secure. After processing, they are permanently deleted. Click 'Upload' and select images from your local computer. Dragging and dropping images to the page also works.</p>
+                </div>
+            </div>
+            <div class="how-it-works-step">
+                <div class="how-it-works-step-icon">2</div>
+                <div class="how-it-works-step-description">
+                    <h3>Edit & Review</h3>
+                    <p>Once the image is processed, the software would take you to the review screen. In the review screen, you can see the extracted table under line-items. If you find an issue with the extracted data, you can correct and fix it right there.</p>
+                </div>
+            </div>
+            <div class="how-it-works-step">
+                <div class="how-it-works-step-icon">3</div>
+                <div class="how-it-works-step-description">
+                    <h3>Convert & Download</h3>
+                    <p>Download the converted data in JSON/Excel/CSV/TXT format. Right after that, the input image is removed from our server.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Python code explanations -->
+        <div class="code-explanations">
+            <h2>Python Code Explanation</h2>
+            <p>This section provides an overview of the Python code that powers the Bill Extraction Tool:</p>
+            <ol>
+                <li><strong>Flask Integration:</strong> The Flask web framework is used to build the web application.</li>
+                <li><strong>Image Upload:</strong> Users can upload bill images, which are processed by the application.</li>
+                <li><strong>Image Cropping:</strong> The code enables users to select and crop specific areas of the uploaded bill images.</li>
+                <li><strong>Text Extraction:</strong> Optical Character Recognition (OCR) is used to extract text from cropped bill parts.</li>
+                <li><strong>Communication with AI:</strong> The extracted text is sent to an AI service for further processing and assistance.</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>
